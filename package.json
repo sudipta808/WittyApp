@@ -4,7 +4,7 @@
   "description": "api for witty app",
   "main": "main.js",
   "scripts": {
-    "start": "node main.js",
+    "start": "node main.js --websocket-port=$OPENSHIFT_NODEJS_PORT --log-level=1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
