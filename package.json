@@ -10,7 +10,10 @@
   "dependencies": {
     "body-parser": "*",
     "express": "*",
-    "firebase-admin": "^5.0.0"
+    "firebase-admin": "^5.0.0",
+    "socket.io": "*",
+    "connect": "*",
+    "pg": "*"
   },
   "repository": {
     "type": "git",

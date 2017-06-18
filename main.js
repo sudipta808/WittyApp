@@ -15,6 +15,15 @@
 
 var express = require('express');
 var app = express();
+var server = require('http').createServer(app)
+    , io     = require('socket.io').listen(server)
+    , connect = require('connect')
+    , pg     = require('pg')
+    , Client = pg.Client;
+
+// Setup express middleware
+app.use(express.static('public'));
+
 var bodyParser = require('body-parser');
 var firebase = require("firebase-admin");
 var serviceAccount = require("./Witty-App-ServiceAccount.json");
