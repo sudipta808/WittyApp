@@ -7,6 +7,11 @@
     "start": "node main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "dependencies": {
+    "body-parser": "*",
+    "express": "*",
+    "firebase-admin": "^5.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sudipta808/WittyApp.git"
