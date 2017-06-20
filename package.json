@@ -8,12 +8,13 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@google-cloud/storage": "^1.1.1",
     "body-parser": "*",
+    "connect": "*",
     "express": "*",
     "firebase-admin": "^5.0.0",
-    "socket.io": "*",
-    "connect": "*",
-    "pg": "*"
+    "pg": "*",
+    "socket.io": "*"
   },
   "repository": {
     "type": "git",
