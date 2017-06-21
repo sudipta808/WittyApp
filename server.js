@@ -10,9 +10,12 @@ var uploadDocument = require('./upload/upload.js');
 
 var app = express();
 var router = express.Router();
-app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use('/api', router);
+
+
+router.use(express.static('public'));
+router.use(bodyParser.urlencoded({ extended: true }));
+router.use(bodyParser.json());
 
 router.use(function(req, res, next) {
     // do logging
@@ -44,7 +47,7 @@ router.route('/upload')
     });
 
 
-app.use('/api', router);
+
 
 app.use(function(req, res) {
     res.status(404).send("Not Found");
