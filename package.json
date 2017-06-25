@@ -15,7 +15,8 @@
     "firebase-admin": "^5.0.0",
     "gcloud": "^0.37.2",
     "pg": "*",
-    "socket.io": "*"
+    "socket.io": "*",
+    "uuid": "^3.1.0"
   },
   "repository": {
     "type": "git",
