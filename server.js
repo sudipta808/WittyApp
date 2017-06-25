@@ -43,7 +43,7 @@ router.route('/category')
 
 router.route('/upload')
     .post(function (req, res) {
-        uploadDocument.uploadDocument(req, res);
+        uploadDocument.uploadDocument(req, res, db);
     });
 
 

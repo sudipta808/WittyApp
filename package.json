@@ -13,6 +13,7 @@
     "connect": "*",
     "express": "*",
     "firebase-admin": "^5.0.0",
+    "gcloud": "^0.37.2",
     "pg": "*",
     "socket.io": "*"
   },
