@@ -1,6 +1,6 @@
 const storage = require('@google-cloud/storage');
 var stream = require('stream');
-var uuid = require('node-uuid');
+const uuidv4 = require('uuid/v4');
 
 const keyFilename = "./Witty-App-ServiceAccount.json";
 const projectId = "witty-app";
@@ -33,7 +33,7 @@ exports.uploadToGcs = function(req, wittyObj) {
             fileExtention = "." + fileExtentionArray[1];
         }
 
-        const gcsname = uuid.v4() + fileExtention;
+        const gcsname = uuidv4() + fileExtention;
         const file = bucket.file(gcsname);
 
         var bufferStream = new stream.PassThrough();
