@@ -7,6 +7,7 @@ var firebase = require("firebase-admin");
 var bodyParser = require('body-parser');
 var category = require('./category/categoryList');
 var uploadDocument = require('./upload/upload.js');
+var fetchData = require('./getData/getFilterData.js');
 
 var app = express();
 var router = express.Router();
@@ -24,7 +25,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our api!' });
+    res.json({ message: 'hooray! welcome to our api!', connected: true });
 });
 
 var serviceAccount = require("./Witty-App-ServiceAccount.json");
@@ -44,6 +45,11 @@ router.route('/category')
 router.route('/upload')
     .post(function (req, res) {
         uploadDocument.uploadDocument(req, res, db);
+    });
+
+router.route('/getData')
+    .get(function (req, res) {
+        fetchData.getFilteredData(req, res, db);
     });
 
 app.use(function(req, res) {
