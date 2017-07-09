@@ -14,10 +14,13 @@ var filterWittyData = function (snapshot, categoryId) {
     return new Promise(function (resolve, reject) {
         var wittyDataSource = [];
         snapshot.forEach(function(data) {
-            if(categoryId) {
+            if(categoryId != 0) {
                 if(categoryId === data.val().categoryId.toString()) {
                     wittyDataSource.push(data);
                 }
+            }
+            else {
+                wittyDataSource.push(data);
             }
         });
 
