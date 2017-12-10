@@ -8,14 +8,14 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "@google-cloud/storage": "^1.1.1",
+    "@google-cloud/storage": "*",
     "body-parser": "*",
     "connect": "*",
     "express": "*",
-    "firebase-admin": "^5.0.0",
-    "gcloud": "^0.37.2",
+    "firebase-admin": "*",
+    "gcloud": "*",
     "pg": "*",
-    "uuid": "^3.1.0"
+    "uuid": "*"
   },
   "repository": {
     "type": "git",

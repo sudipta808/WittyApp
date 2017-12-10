@@ -5,6 +5,7 @@
 var express = require('express');
 var firebase = require("firebase-admin");
 var bodyParser = require('body-parser');
+var authorization = require('./authorization/signin');
 var category = require('./category/categoryList');
 var uploadDocument = require('./upload/upload.js');
 var fetchData = require('./getData/getFilterData.js');
@@ -35,7 +36,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-    res.json({ message: 'hooray! welcome to our witty api!', connected: true });
+    res.json({ message: 'hooray! welcome to Sudipta!', connected: true });
 });
 
 var serviceAccount = require("./Witty-App-ServiceAccount.json");
@@ -46,6 +47,11 @@ firebase.initializeApp({
 });
 
 var db = firebase.database();
+
+router.route('/signin')
+        .post(function (req, res) {
+            authorization.signin(req, res, firebase);
+        });
 
 router.route('/category')
     .get(function (req, res) {
