@@ -14,10 +14,12 @@ var app = express();
 var router = express.Router();
 app.use('/api', router);
 
-
 router.use(express.static('public'));
-router.use(bodyParser.urlencoded({ extended: true }));
-router.use(bodyParser.json());
+// router.use(bodyParser.urlencoded({ extended: true }));
+// router.use(bodyParser.json());
+
+router.use(bodyParser.urlencoded({limit: '50mb', extended: true}));
+router.use(bodyParser.json({limit: '50mb'}));
 
 router.use(function(req, res, next) {
     // Website you wish to allow to connect
@@ -51,6 +53,11 @@ var db = firebase.database();
 router.route('/signin')
         .post(function (req, res) {
             authorization.signin(req, res, firebase);
+        });
+
+router.route('/upload-profile-image')
+        .post(function (req, res) {
+            uploadDocument.uploadDocument(req, res, db);
         });
 
 router.route('/category')
